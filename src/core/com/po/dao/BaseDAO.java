@@ -40,4 +40,20 @@ public interface BaseDAO {
 
     public List<? extends BaseDTO> getListBeanByProc(Connection conn, String procName, BaseResult result) throws Exception;
     
+    public int updateBeanBySql(Connection conn, String sql, List params, BaseResult result) throws Exception;
+
+    public int updateBeanBySql(Connection conn, String sql, BaseResult result) throws Exception;
+
+    public int updateBeanByFile(Connection conn, String sqlFileName, List params, BaseResult result) throws Exception;
+
+    public int updateBeanByFile(Connection conn, String sqlFileName, BaseResult result) throws Exception;
+    
+    public long insertBeanBySql(Connection conn, String sql, List params, BaseResult result) throws Exception;
+
+    public long insertBeanBySql(Connection conn, String sql, BaseResult result) throws Exception;
+
+    public long insertBeanByFile(Connection conn, String sqlFileName, List params, BaseResult result) throws Exception;
+
+    public long insertBeanByFile(Connection conn, String sqlFileName, BaseResult result) throws Exception;
+    
 }

@@ -7,8 +7,6 @@ package com.po.dao.db;
 
 import com.microsoft.sqlserver.jdbc.SQLServerXADataSource;
 import static com.po.dao.db.IStrategyConfigDb.CONFIG_FILE;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -39,6 +37,7 @@ public abstract class BaseConfigDb implements IStrategyConfigDb {
             is = getClass().getResourceAsStream(CONFIG_FILE);
             // load a properties file
             prop.load(is);
+            dbConfig.setDbmsType(prop.getProperty("dbmsType").trim());
             dbConfig.setMaxConnection(Integer.parseInt(prop.getProperty("db.maxconnection").trim()));
             dbConfig.setTimout(Integer.parseInt(prop.getProperty("db.timeout").trim()));
             loadDbConfig();

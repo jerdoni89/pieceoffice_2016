@@ -46,7 +46,8 @@ public class PoolManager {
         dbConfig = strategyDbConfig.loadConfig();
     }
 
-    public MiniConnectionPoolManager getConnectionPoolManager(DBMSType dbms) {
+    public MiniConnectionPoolManager getConnectionPoolManager() {
+        DBMSType dbms = getDBMSType(dbConfig.getDbmsType());
         switch (dbms) {
             case MYSQL:
                 break;
@@ -77,5 +78,18 @@ public class PoolManager {
                 break;
         }
         return mcpm;
+    }
+    
+    private DBMSType getDBMSType(String dbmsType) {
+        if (dbmsType.equalsIgnoreCase("postgres")) {
+            return DBMSType.POSTGRES;
+        } else if (dbmsType.equalsIgnoreCase("oracle")) {
+            return DBMSType.ORACLE;
+        } else if (dbmsType.equalsIgnoreCase("sqlServer")) {
+            return DBMSType.SQL_SERVER;
+        } else if (dbmsType.equalsIgnoreCase("mysql")) {
+            return DBMSType.MYSQL;
+        }
+        return DBMSType.POSTGRES;
     }
 }

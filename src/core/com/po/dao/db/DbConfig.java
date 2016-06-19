@@ -19,6 +19,15 @@ public class DbConfig {
     private int timout;
     private int port;
     private String service;
+    private String dbmsType;
+
+    public String getDbmsType() {
+        return dbmsType;
+    }
+
+    public void setDbmsType(String dbmsType) {
+        this.dbmsType = dbmsType;
+    }
 
     public String getDatabaseName() {
         return databaseName;

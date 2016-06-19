@@ -8,7 +8,6 @@ package com.po.service;
 import biz.source_code.miniConnectionPoolManager.MiniConnectionPoolManager;
 import com.po.dao.BaseDAO;
 import com.po.dao.BaseDAOImpl;
-import com.po.dao.db.DBMSType;
 import com.po.dao.db.PoolManager;
 import com.po.dao.db.SPMConfigDbMode;
 import com.po.resp.MsgResp;
@@ -39,7 +38,7 @@ public abstract class BaseService {
             poolManager = new PoolManager(new SPMConfigDbMode());
         }
         if (pool == null) {
-            pool = poolManager.getConnectionPoolManager(DBMSType.POSTGRES);
+            pool = poolManager.getConnectionPoolManager();
         }
     }
     
