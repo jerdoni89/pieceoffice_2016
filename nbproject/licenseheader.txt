@@ -1,0 +1,7 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Coppyright: luckybear
+<#if licenseLast??>
+${licenseLast}
+</#if>
