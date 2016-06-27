@@ -18,5 +18,5 @@ public abstract  class BaseResult {
     public abstract BaseDTO getBeanFromResultSet(ResultSet rs) throws SQLException;
     
     public abstract List<? extends BaseDTO> getListFromResultSet(ResultSet rs) throws SQLException;
-    
+  
 }
